@@ -1,11 +1,11 @@
 <?php
+namespace ivanenko;
 include "EquationInterface.php";
 include "A.php";
 use core\EquationInterface;
 
-namespace ivanenko;
 
-class NoRootException extends RuntimeException {
+class NoRootException extends \RuntimeException {
 }
 
 
@@ -32,8 +32,8 @@ class B extends A implements EquationInterface {
                 if($d == 0) {
                      $this->x2 = $this->x = (- $b) / (2 *$a);
                 } else {
-                    $this->x = (- $b) + sqrt($d) / (2 *$a );
-                    $this->x2 = (- $b) - sqrt($d) / (2 *$a);
+                    $this->x = ((- $b) + sqrt($d)) / (2 *$a );
+                    $this->x2 = ((- $b) - sqrt($d)) / (2 *$a);
                 }
                 return $this->x;
             }
@@ -46,7 +46,7 @@ class B extends A implements EquationInterface {
     
     public function solve($a, $b, $c) {
         $ret["x1"] = $this->quadratic_equation($a, $b, $c);
-        $ret["x2"] = get_x2();
+        $ret["x2"] = $this->get_x2();
         return $ret;
     }
 }

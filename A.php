@@ -1,7 +1,7 @@
 <?php
 namespace ivanenko;
 
-class ZeroDivisionException extends RuntimeException {
+class ZeroDivisionException extends \RuntimeException {
 }
 
 class A {

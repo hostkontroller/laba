@@ -1,7 +1,7 @@
 <?php
-include "B.php";
-
 namespace ivanenko;
+
+include "B.php";
 
 class C extends B {
     protected $b;
